@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Table Dynamic Record Add</title>
+</head>
+<style>
+    #tbl {
+        min-width: 300px;
+    }
+</style>
+
+<body>
+    <div>
+        <b>Add New Record :</b> <button onclick="add()">Add Record</button>
+    </div>
+    <br>
+    <table border="1" id="tbl">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>STD</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody id="table_body">
+
+        </tbody>
+    </table>
+
+
+
+
+    <script>
+        let get_id = document.getElementById("table_body");
+
+        function add() {
+            let name, std, city, add_record;
+
+            name = prompt("Enter Your Name");
+            std = prompt("Enter Your Std");
+            city = prompt("Enter Your City");
+
+            add_record = "<tr><td>" + name + "</td><td>" + std + "</td><td>" + city + "</td></tr>";
+
+            get_id.innerHTML += add_record;
+        }
+    </script>
+
+</body>
+
+</html>

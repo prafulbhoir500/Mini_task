@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse In and Out Event</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            width: 50vw;
+            margin: auto;
+            box-shadow: 1px 1px 2px black;
+            padding: 10px;
+        }
+
+        .form-group {
+            margin: 5px;
+        }
+
+        .input-form {
+            display: block;
+            width: 100%;
+            border-radius: 4px;
+            height: 30px;
+
+        }
+
+        .group {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .group .input-form {
+            min-width: 200px;
+        }
+
+        .btn {
+            width: 40%;
+            font-size: 1.4rem;
+            border-radius: 3px;
+            margin: 4px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .card-header {
+            margin: 10px;
+        }
+
+        .title {
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form>
+
+            <div class="card">
+                <header class="card-header">
+                    <h1 class="center">Registration Form</h1>
+                </header>
+
+
+                <main class="card-body">
+                    <fieldset>
+                        <legend class="title">Basic Information</legend>
+
+                        <div class="group">
+                            <div class="form-group">
+                                <label for="txtfname">First Name</label>
+                                <input type="text" class="input-form" name="fname" id="txtfname"
+                                    onmouseover="change_color_blue(this)" onmouseout="change_color_orange(this)"
+                                    value="First Name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="txtlname">Last Name</label>
+                                <input type="text" class="input-form" name="lname" id="txtlname"
+                                    onmouseover="change_color_blue(this)" onmouseout="change_color_orange(this)"
+                                    value="Last Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtaadhar">Aadhar Number</label>
+                            <input type="text" class="input-form" name="aadhar" id="txtaadhar"
+                                onmouseover="change_color_blue(this)" onmouseout="change_color_orange(this)"
+                                placeholder="Aadhar No">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend class="title">Contact Information</legend>
+                        <div class="form-group">
+                            <label for="txtaddress">Address</label>
+                            <input type="text" class="input-form" name="address" id="txtaddress"
+                                onmouseover="change_color_blue(this)" onmouseout="change_color_orange(this)">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtemail">Email ID</label>
+                            <input type="text" class="input-form" name="email" id="txtemail"
+                                onmouseover="change_color_blue(this)" onmouseout="change_color_orange(this)">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtemail">Mobile No</label>
+                            <input type="text" class="input-form" name="mobile" id="txtemail"
+                                onmouseover="change_color_blue(this)" onmouseout="change_color_orange(this)">
+                        </div>
+                    </fieldset>
+
+                </main>
+
+                <footer class="card-footer">
+                    <div class="form-group center">
+                        <button type="button" class="btn ">Submit</button>
+                        <button type="reset" class="btn ">Reset</button>
+
+                    </div>
+                </footer>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function change_color_blue(get_value) {
+            //let get_name = document.getElementById("txtfname");
+            get_value.style.color = "blue";
+            console.log(get_value);
+            //console.log("mouse over active");
+
+        }
+
+        function change_color_orange(get_value) {
+            //let get_name = document.getElementById("txtfname");
+            get_value.style.color = "orangered";
+            //console.log("mouse out active");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        header:hover {
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#title').click(function () {
+                $('#title').fadeOut(5000);
+            })
+
+
+            $('header').click(function () {
+                $('header').hide();
+            })
+
+            $('#btn1').click(function () {
+                $('header').show();
+            })
+
+            // $('#marquee_tag').hover(function () {
+            //     $('#marquee_tag').stop();
+            // })
+
+            // $('#marquee_tag').out(function () {
+            //     $('#marquee_tag').stat();
+            // })
+        })
+
+
+    </script>
+</head>
+
+<body>
+
+    <div>
+        <h3 id="title">This is title</h3>
+    </div>
+    <!-- onmouseover="this.stop()" onmouseout="this.start()" -->
+    <marquee id="marquee_tag" behavior="alternate" onmouseover="this.stop()" onmouseout="this.start()">
+        <h3 id="head1">Welcome to jQuery</h3>
+    </marquee>
+
+    <div class="container">
+        <section>
+            <header>
+                <h1>This is Heading 1</h1>
+            </header>
+            <article>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem suscipit maxime incidunt quae
+                quis nisi porro at deleniti sed, ex fugit quos! Assumenda consequuntur voluptate voluptas! Sint nobis
+                omnis eaque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore cum nostrum officia nam,
+                corrupti, explicabo sapiente, cupiditate aliquid assumenda aperiam dolorem qui illum delectus eligendi.
+                In corrupti odit nobis ullam?</article>
+        </section>
+        <hr>
+        <section>
+            <header>
+                <h1>This is Heading 2</h1>
+            </header>
+            <article>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem suscipit maxime incidunt quae
+                quis nisi porro at deleniti sed, ex fugit quos! Assumenda consequuntur voluptate voluptas! Sint nobis
+                omnis eaque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, ratione. Error, quaerat
+                repudiandae voluptatum ratione, minima accusamus minus placeat perferendis consectetur dignissimos
+                officiis alias temporibus veniam soluta porro libero atque?</article>
+        </section>
+        <hr>
+        <section>
+            <header>
+                <h1>This is Heading 3</h1>
+            </header>
+            <article>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem suscipit maxime incidunt quae
+                quis nisi porro at deleniti sed, ex fugit quos! Assumenda consequuntur voluptate voluptas! Sint nobis
+                omnis eaque?</article>
+        </section>
+    </div>
+    <br>
+    <button id="btn1">Show Heading Tags</button>
+
+</body>
+
+
+</html>

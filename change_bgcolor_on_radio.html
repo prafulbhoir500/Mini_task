@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color on Radio Button</title>
+</head>
+<style>
+    .container {
+        text-align: center;
+    }
+
+    .group {
+        display: inline;
+        font-size: 1.3rem;
+    }
+
+    .red {
+        color: red;
+    }
+
+    .green {
+        color: green;
+    }
+
+    .blue {
+        color: blue;
+    }
+
+    .card {
+        background-color: #fff;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <header class="card-head">
+                <h2>Select Background Colour</h2>
+            </header>
+
+            <main class="card-body">
+                <div class="group red">
+                    <input type="radio" name="color" id="radio_red" value="red">Red
+                </div>
+
+                <div class="group green">
+                    <input type="radio" name="color" id="radio_green" value="green">Green
+                </div>
+                <div class="group blue">
+                    <input type="radio" name="color" id="radio_blue" value="blue">Blue
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const radioButtons = document.getElementsByName('color')
+        console.log(radioButtons);
+
+        radioButtons.forEach(radioButton => {
+            radioButton.addEventListener('change', (event) => {
+                const selectedColor = event.target.value;
+                document.body.style.backgroundColor = selectedColor;
+            });
+        });
+
+
+        // for (const btn of get_selected_value) {
+        //     btn.click = change_color;
+        // }
+
+        // function change_color() {
+        //     document.body.style.background = "red";
+        // }
+
+
+
+        //get_selected_value.addEventListener("onchage");
+
+        // let get_selected_value1 = document.getElementById("radio_red");
+        // let get_selected_value2 = document.getElementById("radio_green");
+        // let get_selected_value3 = document.getElementById("radio_blue");
+
+        // get_selected_value1.addEventListener("click", red);
+        // get_selected_value2.addEventListener("click", green);
+        // get_selected_value3.addEventListener("click", blue);
+
+        // function red() {
+        //     document.body.style.backgroundColor = get_selected_value1.value;
+        // }
+
+        // function green() {
+        //     document.body.style.backgroundColor = get_selected_value2.value;
+        // }
+
+        // function blue() {
+        //     document.body.style.backgroundColor = get_selected_value3.value;
+        // }
+
+    </script>
+
+</body>
+
+</html>

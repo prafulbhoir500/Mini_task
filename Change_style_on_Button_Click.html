@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change style on Button Click</title>
+</head>
+<style>
+    .container {
+        width: 90vw;
+        margin: auto;
+    }
+
+    .articles {
+        text-align: justify;
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        font-size: 1.5rem;
+
+    }
+
+    .footer {
+        text-align: center;
+        padding: 5px;
+    }
+
+    .card-heading {
+        text-align: center;
+    }
+
+    .para-style {
+        font-weight: bold;
+        background-color: yellow;
+    }
+</style>
+
+<body>
+    <div>
+        <div class="container">
+            <header class="card-heading">
+                <h1>This is Heading</h1>
+            </header>
+
+            <main id="content">
+                <section class="articles">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span> Doloremque
+                        odit quos</span>
+                    distinctio fugit et delectus expedita consequuntur cum eligendi, nihil eum, voluptas reiciendis?
+                    <span>Quibusdam molestias in laborum</span> ab reiciendis totam delectus quisquam suscipit itaque
+                    enim facilis
+                    eligendi quidem, dicta, ducimus iure deleniti dolorum veniam a asperiores quas! Numquam, dolor
+                    molestias!
+                </section>
+                <section class="articles">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam cum,
+                    architecto eveniet libero amet similique. <span>Aliquam accusamus animi,</span> voluptas aspernatur
+                    nulla
+                    doloribus veritatis fugit quidem quo sint officiis qui velit sed quas mollitia porro, architecto eum
+                    ducimus et assumenda reprehenderit recusandae. Dignissimos doloribus cum nemo.</section>
+                <section class="articles">Lorem ipsum dolor sit amet consectetur, adipisicing elit. <span>
+                        Adipisci labore quia
+                    </span>
+                    corporis esse, amet repellendus porro corrupti quisquam voluptate, facere placeat commodi dicta
+                    tenetur facilis, et delectus nemo ipsam qui! Molestias, voluptatibus aliquam! Veritatis, saepe
+                    ducimus facere doloremque ratione cumque? Commodi magnam error ratione? Optio debitis porro esse ea
+                    laudantium ullam accusamus facilis.</section>
+                <section class="articles">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid veritatis deserunt impedit quia
+                    necessitatibus. <span class="para-style0">Quo distinctio minima</span> aspernatur exercitationem
+                    tempore optio!
+                    Blanditiis quia
+                    cumque nesciunt reiciendis? <span class="para-style0">Voluptates, eaque veritatis.</span> Repellat,
+                    nam illo
+                    reprehenderit
+                    repellendus vitae, commodi amet, optio voluptate esse temporibus <span class="para-style0">fuga
+                        assumenda</span> omnis molestias
+                    corrupti ipsum magnam ullam minima odio fugiat porro? Dolorem temporibus molestias mollitia enim
+                    dicta porro?
+                </section>
+            </main>
+            <footer class="footer">
+                <button type="button" id="btnchange" class="btn">Change style</button>
+            </footer>
+        </div>
+    </div>
+
+
+    <script>
+
+
+
+        let btn_id = document.getElementById("btnchange");
+        btn_id.addEventListener("click", function () {
+
+            let get_tag_name = document.querySelectorAll("span");
+            console.log(get_tag_name[0]);
+            for (let i = 0; i <= get_tag_name.length; i++) {
+                get_tag_name[i].classList.toggle("para-style")
+            }
+
+        })
+
+    </script>
+
+</body>
+
+
+</html>

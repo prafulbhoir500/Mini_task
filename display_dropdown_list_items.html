@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display Dropdown List items</title>
+</head>
+
+<body>
+
+    <div>
+        <label>Select City</label>
+        <select onchange="dispaly()" id="city">
+            <option>Select City</option>
+            <option>Thane</option>
+            <option>Kalyan</option>
+            <option>Palghar</option>
+            <option>Vasai</option>
+            <option>Virar</option>
+            <option>Ghansoli</option>
+            <option>Pune</option>
+            <option>Nashik</option>
+            <option>Dadar</option>
+            <option>Vashi</option>
+            <option>Panavel</option>
+        </select>
+    </div>
+
+
+    <script>
+        function dispaly() {
+            let get_value = document.getElementById("city");
+            console.log(get_value.value);
+            console.log(get_value);
+
+            alert("You Select " + get_value.value + " City");
+            //alert("You Select " + get_value.lenght + " City");
+
+        }
+    </script>
+</body>
+
+
+
+</html>
