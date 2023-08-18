@@ -12,7 +12,7 @@
         }
     </style>
 
-    <script>
+       <script>
 
         $(document).ready(function () {
 
@@ -29,13 +29,22 @@
                 $('header').show();
             })
 
+
+            $('#marquee_tag').mouseenter(function () {
+                $(this).stop();
+            })
+
+            $('#marquee_tag').mouseleave(function () {
+                $(this).stat();
+            })
+
             // $('#marquee_tag').hover(function () {
-            //     $('#marquee_tag').stop();
+            //     $(this).stop();
+            // }, function () {
+            //     $(this).start();
             // })
 
-            // $('#marquee_tag').out(function () {
-            //     $('#marquee_tag').stat();
-            // })
+
         })
 
 
