@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        .btn {
+            font-size: 1.3rem;
+            padding: 5px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .tbl th,
+        td {
+            padding: 10px;
+        }
+
+        .link_disable {
+            cursor: no-drop;
+        }
+
+        #txtadd {
+            width: 50%;
+        }
+
+        #para {
+            font-size: 1.2rem;
+            border: 2px solid #ee9a2d;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="assign1">
+            <h1>Add text on mouseup and down event fired on paragraph</h1>
+            <p id="para">
+
+            </p>
+            <textarea rows="5" name="addtxt" id="txtadd"></textarea>
+            <hr>
+        </div>
+        <div class="assign2">
+            <h1>Removes all rows from.a table except headings. </h1>
+            <button type="button" id="remove_data" class="btn">Remove
+                Data</button>
+            <table border="2" id="tbl1" class="tbl">
+                <thead>
+                    <tr>
+                        <th>Sr. No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Mobile No</th>
+                        <th>City</th>
+                    </tr>
+
+                </thead>
+                <tbody id="tblbody">
+                    <tr>
+                        <td>1.</td>
+                        <td>Praful</td>
+                        <td>praful@gmail.com</td>
+                        <td>7858965854</td>
+                        <td>Wada</td>
+                    </tr>
+
+                    <tr>
+                        <td>2.</td>
+                        <td>Pramod</td>
+                        <td>pramod@gmail.com</td>
+                        <td>7858965854</td>
+                        <td>Murbad</td>
+                    </tr>
+
+                    <tr>
+                        <td>3.</td>
+                        <td>Pranay</td>
+                        <td>pranay@gmail.com</td>
+                        <td>7858965854</td>
+                        <td>Vasind</td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>Atish</td>
+                        <td>atish@gmail.com</td>
+                        <td>7858965854</td>
+                        <td>Titwala</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+        </div>
+        <div class="assign3">
+            <h1> Disable hyperlink using removeAttr function</h1>
+            <h1> <a href="http://www.google.com" id="link">Click to Open Google</a> </h1>
+            <button type="button" id="btn_disable" class="btn">Click to Disable Link
+                Data</button>
+
+            <button type="button" id="btn_enable" class="btn">Click to Enable Link
+                Data</button>
+            <hr>
+        </div>
+    </div>
+
+    <script>
+        $('#remove_data').click(function () {
+            $('#tblbody').remove();
+        })
+
+
+        $('#btn_disable').click(function () {
+            $('#link').attr("disable", "true");
+            $('#link').addClass("link_disable")
+        })
+
+        $('#btn_enable').click(function () {
+            $('#link').attr("disable", "false");
+            $('#link').removeClass("link_disable")
+        })
+
+        $('#txtadd').mouseleave(function () {
+            let para = $('#txtadd').val();
+            $('#para').text(para);
+        })
+    </script>
+
+</body>
+
+</html>
