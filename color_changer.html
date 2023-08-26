@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Colour Changers</title>
+    <style>
+        .container{
+            text-align: center;
+        }
+
+        .card{
+            display: flex;
+            gap:10px;
+            justify-content: center;
+            background-color: #fff;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #212121;
+            cursor: pointer;
+            
+        }
+        </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Color Scheme Switcher</h1>
+
+        <div class="card" id="parent">
+            <!-- <div class="box" id="gray" onclick="change_Color(this)">gray</div>
+            <div class="box" id="green" onclick="change_Color(this)">green</div>
+            <div class="box" id="blue" onclick="change_Color(this)">blue</div>
+            <div class="box" id="orange" onclick="change_Color(this)">orange</div>
+            <div class="box" id="yellow" onclick="change_Color(this)">yellow</div> -->
+
+            <div class="box" id="gray">gray</div>
+            <div class="box" id="green">green</div>
+            <div class="box" id="blue">blue</div>
+            <div class="box" id="orange">orange</div>
+            <div class="box" id="yellow">yellow</div>
+        </div>
+    </div>
+
+
+
+    <script>
+    //    function change_Color(e){
+    //     let get_value= e;
+    //     console.log(get_value);
+    //     let color= e.id;
+    //     console.log(color);
+    //     document.body.style.backgroundColor=color;
+    //     document.getElementById(color).style.backgroundColor=color;
+    //    }
+
+    function change(e){
+        console.log(e.target.id);
+        const color=e.target.id;
+        document.body.style.backgroundColor=color;
+
+    }
+    document.querySelector('#parent').addEventListener('click',change);
+
+
+
+    </script>
+    
+</body>
+</html>
