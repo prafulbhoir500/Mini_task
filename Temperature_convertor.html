@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Convertor</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            width: 50%;
+            margin: auto;
+            border: 1px solid black;
+            padding: 30px;
+        }
+
+        .card-body {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .form-group {
+            border: 1px solid black;
+            margin: 10px;
+            width: 40%;
+        }
+
+        .input-form {
+            font-size: 1.5rem;
+            border: none;
+            text-align: center;
+            width: 100%;
+            padding: 4px 10px;
+        }
+
+        .form-group label {
+            background-color: #bebebe;
+            border-top: 1px solid black;
+            display: block;
+            padding: 8px;
+        }
+
+        #sign {
+            font-size: 2rem;
+            font-weight: bold;
+            padding-top: 15px;
+        }
+
+        .heading {
+            background-color: #bebebe;
+            border: 1px solid black;
+            text-align: center;
+            margin: 10px 10px 30px;
+            padding: 5px;
+        }
+
+        @media screen and (max-width: 760px) {
+            #sign {
+                display: none;
+            }
+
+            .form-group {
+            
+            width: 100%;
+        }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="heading">Temperature Converter</h1>
+            </div>
+
+            <div class="card-body">
+                <div class="form-group">
+                    <input type="number" name="num1" id="txtinp1" value="0" class="input-form"><br>
+                    <label for="txtinp1">Celsius <sup>o</sup>C</label>
+                </div>
+                <label id="sign">=</label>
+                <div class="form-group">
+                    <input type="number" name="num2" id="txtinp2" value="32" class="input-form"><br>
+                    <label for="txtinp2">Fahrenheit <sup>o</sup>F</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let inp1 = document.getElementById('txtinp1')
+        let inp2 = document.getElementById('txtinp2')
+
+        inp1.addEventListener('input', function () {
+            let c=inp1.value;
+            let f=(c * 9/5) + 32;
+            if(!Number.isInteger(f)){
+                f=f.toFixed(4);
+            }
+            
+            inp2.value=f;
+
+        })
+
+        inp2.addEventListener('input', function () {
+            let f=inp1.value;
+            let c=(f - 32) * 5/9;
+            if(!Number.isInteger(c)){
+                c=c.toFixed(4);
+
+            }
+            inp1.value=c;
+        })
+
+    </script>
+
+</body>
+
+</html>

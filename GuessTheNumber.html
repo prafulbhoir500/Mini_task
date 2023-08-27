@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+</head>
+<body>
+
+    <h1 id="number"></h1>
+    
+
+    <script>
+        setInterval(function(){
+            const number=document.getElementById('number');
+            const randomNumber=Math.ceil(Math.random()*100);
+            number.innerHTML=randomNumber;
+        console.log(randomNumber);
+        },1000)
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word and Character Counter</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #918c8c;
+        }
+
+        .card {
+            width: 70%;
+            margin: auto;
+        }
+
+        .card-header {
+            text-align: center;
+            background-color: #f38723;
+            color: white
+        }
+
+        .card-body {
+            border: 1px solid #f38723;
+        }
+
+        .card-footer {
+            text-align: center;
+            background-color: #f38723;
+            color: white
+        }
+
+        #txtbox {
+            border: none;
+            width: 100%;
+            margin-bottom: -4px;
+            padding: 5px;
+            height: 50vh;
+            font-size: 1.4rem;
+        }
+
+        .containter {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="containter">
+        <div class="card">
+            <div class="card-header">
+                <h1>Word and Character Counter</h1>
+            </div>
+            <div class="card-body">
+                <textarea name="txtarea" id="txtbox" cols="30" rows="10"></textarea>
+            </div>
+            <div class="card-footer">
+                <h2>
+                    <span id="words">0</span> Words and <span id="char">0</span> Characters
+                </h2>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        const txtbox = document.getElementById('txtbox');
+
+        txtbox.addEventListener('input', function () {
+            let content = txtbox.value;
+            document.getElementById('char').innerHTML = content.length;
+
+            content = content.trim();
+            let countwords = content.split(" ");
+            let onlyWords = countwords.filter(function (value) {
+                if (value != " ") {
+                    return value;
+                }
+            });
+            console.log(onlyWords);
+            document.getElementById('words').innerHTML = onlyWords.length;
+
+        })
+    </script>
+
+</body>
+
+</html>
