@@ -1,0 +1,90 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="Base.Home" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Assets/bootstrap.min.css" rel="stylesheet" />
+    <script src="Assets/bootstrap.js"></script>
+    <script>
+        // Function to toggle visibility of moreFields1
+        function toggleMoreFields() {
+            console.log("toggleMoreFields 3");
+            var div = document.getElementById("moreFields1");
+            var hiddenField = document.getElementById("<%= hfMoreFieldsVisible.ClientID %>");
+
+            if (div.style.display === "none" || div.style.display === "") {
+                div.style.display = "block";
+                hiddenField.value = "true"; // Update hidden field value
+            } else {
+                div.style.display = "none";
+                hiddenField.value = "false"; // Update hidden field value
+            }
+        }
+
+        // Function to initialize visibility based on hidden field value
+        function initializeVisibility() {
+            var div = document.getElementById("moreFields1");
+            var hiddenField = document.getElementById("<%= hfMoreFieldsVisible.ClientID %>");
+            console.log("initializeVisibility 2");
+            console.log(hiddenField.value);
+
+            if (hiddenField.value === "true") {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        }
+
+        // Call initializeVisibility on page load
+        window.onload = function () {
+            console.log("Page Load 1");
+            initializeVisibility();
+        };
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Hidden field to store visibility state -->
+        <asp:HiddenField ID="hfMoreFieldsVisible" runat="server" Value="false" />
+
+        <div class="card">
+            <div class="card">
+                <div class="card-header">
+                    <asp:Button ID="btnshowfield" runat="server" Text="show" CssClass="btn btn-primary" OnClick="btnshowfield_Click" />
+                    <a href="javascript:void(0);" onclick="toggleMoreFields()" class="btn btn-warning">Show Fields</a>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <asp:TextBox ID="txtName" runat="server" CssClass="form-control" OnTextChanged="txtName_TextChanged" AutoPostBack="true"></asp:TextBox>
+                        </div>
+
+                        <div class="col-6">
+                            <asp:TextBox ID="txtShowName" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="moreFields1" style="display:none">
+                    <h1>title</h1>
+                    <div class="card-body" id="moreFields" runat="server" style="display:none">
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="form-label">First Name</label>
+                                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Last Name</label>
+                                <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
